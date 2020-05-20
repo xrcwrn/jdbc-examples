@@ -30,5 +30,5 @@ basic mysql jdbc operation examples
      FetchByDojRange,
      FetchAll
      
-     Keep learning ebhor.com
+     Keep learning  http://www.ebhor.com
      
