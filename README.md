@@ -17,16 +17,18 @@ basic mysql jdbc operation examples
      similar for others
      
      JDBC Method contains
-     Insert
-     Update 
-     Delete
-     FetchById
-     FetchByEmailId
-     FetchByMobileNo
-     SearchByName
-     FetchByCity
-     FetchBySalaryRange
-     FetchByDob
-     FetchByDojRange
+     Insert,
+     Update, 
+     Delete,
+     FetchById,
+     FetchByEmailId,
+     FetchByMobileNo,
+     SearchByName,
+     FetchByCity,
+     FetchBySalaryRange,
+     FetchByDob,
+     FetchByDojRange,
      FetchAll
+     
+     Keep learning ebhor.com
      
