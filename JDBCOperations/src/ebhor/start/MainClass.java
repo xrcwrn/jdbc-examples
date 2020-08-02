@@ -23,7 +23,7 @@ public class MainClass {
 
     public static void main(String[] args) {
         MainClass mainclass = new MainClass();
-        operation o = operation.FETCHALL;
+        operation o = operation.ADD;
         switch (o) {
             case ADD:
                 mainclass.addEmployee();
