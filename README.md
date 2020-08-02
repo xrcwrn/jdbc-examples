@@ -1,7 +1,95 @@
 # jdbc-examples
 basic mysql jdbc operation examples
 
- How to run 
+          
+<table class="table">
+<tr>
+<th>Sr No</th>
+   <th>Operation and code</th>
+   <th>Action</th>
+</tr>
+<tr>
+     <td>1</td>
+     <td>ADD (1)</td>
+     <td>Add Employee records in database should be initialize only once. First time after creating database</td>
+     
+</tr>
+<tr>
+     <td>2</td>
+     <td>UPDATE (2)</td>
+     <td>Update a record in table, based on primary key id</td>
+     
+</tr>
+<tr>
+     <td>3</td>
+     <td>DELETE (3)</td>
+     <td>Insert a new record to table and delete it from database</td>
+     
+</tr>
+<tr>
+     <td>4</td>
+     <td>FETCH BY ID (4)</td>
+     <td>Fetch a record from table based on id</td>
+     
+</tr>
+<tr>
+     <td>5</td>
+     <td>FETCH BY EMAIL (5)</td>
+     <td>Fetch a record from table based on email</td>
+     
+</tr>
+<tr>
+     <td>6</td>
+     <td>FETCH BY MOBILE NO (6)</td>
+     <td>Fetch a record from table based on mobile number</td>
+     
+</tr>
+<tr>
+     <td>7</td>
+     <td>SEARCH BY NAME (7)</td>
+     <td>Fetch records from table based on Name</td>
+     
+</tr>
+<tr>
+     <td>8</td>
+     <td>FETCH BY CITY (8)</td>
+     <td>Fetch records from table based on city name</td>
+     
+</tr>
+<tr>
+     <td>9</td>
+     <td>FETCH BY SALARY RANGE (9)</td>
+     <td>Fetch records from table based on Salary Range</td>
+     
+</tr>
+<tr>
+     <td>10</td>
+     <td>FETCH BY DOB (10)</td>
+     <td>Fetch records from table based on date of birth</td>
+     
+</tr>
+<tr>
+     <td>11</td>
+     <td>FETCH BY DOJ RANGE (11)</td>
+     <td>Fetch records from table based on Date of Joining Range</td>
+     
+</tr>
+<tr>
+     <td>12</td>
+     <td>FETCH ALL (12)</td>
+     <td>Fetch all records from table </td>
+     
+</tr>
+<tr>
+     <td>13</td>
+     <td>EXIT (0)</td>
+     <td>EXIT FROM ALL OPERATION</td>
+     
+</tr>
+</table>
+
+
+ <h2>How to run</h2> 
 
 1 create database
  copy script database setup.txt in database it will create ebhor database and user to access database
