@@ -98,26 +98,10 @@ basic mysql jdbc operation examples
   If your are using netbeans then open project JDBCOperations.
   You can also copy package ebhor to your project 
   
-3. Run project
-    package ebhor.start contains MainClass.java run it as a java project it will insert 5 employee details in database
+3 Run project
+  package ebhor.start contains MainClass.java run it as a java project it will insert 5 employee details in database
     
-    To update database comment insert operation and uncomment 2. update employee
-     similar for others
-     
-     JDBC Method contains
-     Insert,
-     Update, 
-     Delete,
-     FetchById,
-     FetchByEmailId,
-     FetchByMobileNo,
-     SearchByName,
-     FetchByCity,
-     FetchBySalaryRange,
-     FetchByDob,
-     FetchByDojRange,
-     FetchAll
-     
-     find this tutorail on link https://www.ebhor.com/mysql-jdbc/
-     Keep learning  http://www.ebhor.com
+         
+  Find this tutorail on link https://www.ebhor.com/mysql-jdbc/
+  Keep learning  http://www.ebhor.com
      
