@@ -41,73 +41,110 @@ public class EmployeeAction {
         if (st == 1) {
             System.out.println("Employee Deleted Successfully");
         } else {
-            System.out.println("Unable to Delete Employee");
+            System.out.println("No Record Found");
         }
     }
 
     public void fetchById(Long id) {
         Employee employee = dao.fetchById(id);
-        System.out.println("Employee Details are :");
-        System.out.println(employee);
-    }
-
-    public void fetchByEmailId(String emailId) {
-        Employee employee = dao.fetchByEmailId(emailId);
-        System.out.println("Employee Details are :");
-        System.out.println(employee);
-    }
-
-    public void fetchByMobileNo(String mobileNo) {
-        Employee employee = dao.fetchByMobileNo(mobileNo);
-        System.out.println("Employee Details are :");
-        System.out.println(employee);
-    }
-
-    public void searchByName(String name) {
-        List<Employee> employeeList = dao.searchByName(name);
-        System.out.println("Employee Details are :");
-        for (Employee employee : employeeList) {
+        if (employee.getId() == 0) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
             System.out.println(employee);
         }
     }
 
+    public void fetchByEmailId(String emailId) {
+        Employee employee = dao.fetchByEmailId(emailId);
+        if (employee.getId() == 0) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
+            System.out.println(employee);
+        }
+    }
+
+    public void fetchByMobileNo(String mobileNo) {
+        Employee employee = dao.fetchByMobileNo(mobileNo);
+        if (employee.getId() == 0) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
+            System.out.println(employee);
+        }
+    }
+
+    public void searchByName(String name) {
+        List<Employee> employeeList = dao.searchByName(name);
+        if (employeeList.isEmpty()) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
+            for (Employee employee : employeeList) {
+                System.out.println(employee);
+            }
+        }
+
+    }
+
     public void fetchByCity(String city) {
         List<Employee> employeeList = dao.fetchByCity(city);
-        System.out.println("Employee Details are :");
-        for (Employee employee : employeeList) {
-            System.out.println(employee);
+        if (employeeList.isEmpty()) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
+            for (Employee employee : employeeList) {
+                System.out.println(employee);
+            }
         }
     }
 
     public void fetchBySalaryRange(BigDecimal lowerSalary, BigDecimal higherSalary) {
         List<Employee> employeeList = dao.fetchBySalaryRange(lowerSalary, higherSalary);
-        System.out.println("Employee Details are :");
-        for (Employee employee : employeeList) {
-            System.out.println(employee);
+        if (employeeList.isEmpty()) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
+            for (Employee employee : employeeList) {
+                System.out.println(employee);
+            }
         }
     }
 
     public void fetchByDob(Date dob) {
         List<Employee> employeeList = dao.fetchByDob(dob);
-        System.out.println("Employee Details are :");
-        for (Employee employee : employeeList) {
-            System.out.println(employee);
+        if (employeeList.isEmpty()) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
+            for (Employee employee : employeeList) {
+                System.out.println(employee);
+            }
         }
     }
 
     public void fetchByRangeDoj(Date startDate, Date endDate) {
-        List<Employee> employeeList = dao.fetchByRangeDoj(startDate,endDate);
-        System.out.println("Employee Details are :");
-        for (Employee employee : employeeList) {
-            System.out.println(employee);
+        List<Employee> employeeList = dao.fetchByRangeDoj(startDate, endDate);
+        if (employeeList.isEmpty()) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
+            for (Employee employee : employeeList) {
+                System.out.println(employee);
+            }
         }
     }
 
     public void fetchAll() {
         List<Employee> employeeList = dao.fetchAll();
-        System.out.println("Employee Details are :");
-        for (Employee employee : employeeList) {
-            System.out.println(employee);
+        if (employeeList.isEmpty()) {
+            System.out.println("No Record Found");
+        } else {
+            System.out.println("Employee Details are :");
+            for (Employee employee : employeeList) {
+                System.out.println(employee);
+            }
         }
     }
 
