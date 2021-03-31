@@ -32,7 +32,6 @@ public class MainClass {
             switch (value) {
                 case 1:
                     mainclass.addEmployee();
-                    mainclass.fetchAllEmployee();
                     break;
                 case 2:
                     mainclass.updateEmployee();
@@ -79,59 +78,125 @@ public class MainClass {
     }
 
     public void addEmployee() {
-        Employee employee1 = new Employee("Ram", "Kumar", "Street no 5 sector 5", "123456789", "te@gmail.com", "Bhilai", "CEO", Date.valueOf("1988-03-22"), Date.valueOf("2015-05-05"), new BigDecimal(150000));
-        Employee employee2 = new Employee("Mohan", "Lal", "Near Super market", "234567891", "mohallal@gmail.com", "Indore", "Manager", Date.valueOf("1988-05-20"), Date.valueOf("2015-05-15"), new BigDecimal(130000));
-        Employee employee3 = new Employee("Shyam", "Bajpayee", "Shanti Nagar", "345678912", "bajpayee.shyam@gmail.com", "Pune", "Manager", Date.valueOf("1989-06-10"), Date.valueOf("2016-06-22"), new BigDecimal(130000));
-        Employee employee4 = new Employee("Rita", "Kapoor", "Near HAL Layout", "456789123", "ritakapoor@gmail.com", "Bangalore", "Analyst", Date.valueOf("1989-06-12"), Date.valueOf("2016-06-06"), new BigDecimal(120000));
-        Employee employee5 = new Employee("Nita", "Rai", "Sundar Nagar", "567891234", "nitarai@gmail.com", "Raipur", "Analyst", Date.valueOf("1988-03-22"), Date.valueOf("2015-05-05"), new BigDecimal(120000));
-        action.insert(employee1);
-        action.insert(employee2);
-        action.insert(employee3);
-        action.insert(employee4);
-        action.insert(employee5);
+        Employee employee = new Employee();
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter First Name");
+        employee.setFname(insert.next());
+        System.out.println("Enter Last Name");
+        employee.setLname(insert.next());
+        System.out.println("Enter Address");
+        employee.setAddress(insert.next());
+        System.out.println("Enter Mobile Number");
+        employee.setMobileNo(insert.next());
+        System.out.println("Enter Mail Id");
+        employee.setMailId(insert.next());
+        System.out.println("Enter City");
+        employee.setCity(insert.next());
+        System.out.println("Enter Designation");
+        employee.setDesignation(insert.next());
+        System.out.println("Enter Dob (yyyy-mm-dd)");
+        employee.setDob(Date.valueOf(insert.next()));
+        System.out.println("Enter Doj  (yyyy-mm-dd)");
+        employee.setDoj(Date.valueOf(insert.next()));
+        System.out.println("Enter Salary");
+        employee.setSalary(insert.nextBigDecimal());
+        action.insert(employee);
     }
 
     public void updateEmployee() {
-        Employee employee1 = new Employee(1l, "Rameshwar", "Kumar", "Street no 5 sector 6", "4564563442", "test@gmail.com", "Bhilai", "CEO", Date.valueOf("1988-03-22"), Date.valueOf("2015-05-05"), new BigDecimal(150000));
-        action.update(employee1);
+        Employee employee = new Employee();
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Employee Id");
+        employee.setId(insert.nextLong());
+        System.out.println("Enter First Name");
+        employee.setFname(insert.next());
+        System.out.println("Enter Last Name");
+        employee.setLname(insert.next());
+        System.out.println("Enter Address");
+        employee.setAddress(insert.next());
+        System.out.println("Enter Mobile Number");
+        employee.setMobileNo(insert.next());
+        System.out.println("Enter Mail Id");
+        employee.setMailId(insert.next());
+        System.out.println("Enter City");
+        employee.setCity(insert.next());
+        System.out.println("Enter Designation");
+        employee.setDesignation(insert.next());
+        System.out.println("Enter Dob (yyyy-mm-dd)");
+        employee.setDob(Date.valueOf(insert.next()));
+        System.out.println("Enter Doj  (yyyy-mm-dd)");
+        employee.setDoj(Date.valueOf(insert.next()));
+        System.out.println("Enter Salary");
+        employee.setSalary(insert.nextBigDecimal());
+        action.update(employee);
     }
 
     public void deleteEmployee() {
-        Employee employee6 = new Employee("Ramesh", "Kumar", "Sadar market", "345234237", "rameshkumar1@gmail.com", "Bhopal", "Manager", Date.valueOf("1989-12-20"), Date.valueOf("2015-05-15"), new BigDecimal(100000));
-        action.insert(employee6);
-        action.delete(6l);
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Employee Id");
+        long id = insert.nextLong();
+        action.delete(id);
     }
 
     public void fetchEmployeeById() {
-        action.fetchById(2l);
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Employee Id");
+        long id = insert.nextLong();
+        action.fetchById(id);
     }
 
     public void fetchEmployeeByEmail() {
-        action.fetchByEmailId("bajpayee.shyam@gmail.com");
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Employee Mail Id");
+        String mailId = insert.next();
+        action.fetchByEmailId(mailId);
     }
 
     public void fetchEmployeeByMobileNo() {
-        action.fetchByMobileNo("6538659801");
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Employee Mobile Number");
+        String mobileNo = insert.next();
+        action.fetchByMobileNo(mobileNo);
     }
 
     public void searchEmployeeByName() {
-        action.searchByName("Ram");
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Employee Name");
+        String name = insert.next();
+        action.searchByName(name);
     }
 
     public void fetchEmployeeByCity() {
-        action.fetchByCity("Pune");
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Employee City");
+        String city = insert.next();
+        action.fetchByCity(city);
     }
 
     public void fetchEmployeeBySalaryRange() {
-        action.fetchBySalaryRange(new BigDecimal(100000), new BigDecimal(130000));
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Salary Start Range");
+        BigDecimal salaryRange1 = insert.nextBigDecimal();
+        System.out.println("Enter Salary End Range");
+        BigDecimal salaryRange2 = insert.nextBigDecimal();
+
+        action.fetchBySalaryRange(salaryRange1, salaryRange2);
     }
 
     public void fetchEmployeeByDob() {
-        action.fetchByDob(Date.valueOf("1988-03-22"));
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Date of Birth (yyyy-mm-dd)");
+        String dob = insert.next();
+        action.fetchByDob(Date.valueOf(dob));
     }
 
     public void fetchEmployeeByDOjRange() {
-        action.fetchByRangeDoj(Date.valueOf("2015-05-05"), Date.valueOf("2016-06-06"));
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Enter Start Date of Joining (yyyy-mm-dd)");
+        String dob1 = insert.next();
+        System.out.println("Enter End Date of Joining (yyyy-mm-dd)");
+        String dob2 = insert.next();
+        action.fetchByRangeDoj(Date.valueOf(dob1), Date.valueOf(dob2));
     }
 
     public void fetchAllEmployee() {
