@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 public class EmployeeDao {
-    
+
     Connection con = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -56,7 +56,7 @@ public class EmployeeDao {
         }
         return st;
     }
-    
+
     public int update(Employee employee) {
         con = ConnectionFactory.getConnection();
         try {
@@ -89,7 +89,7 @@ public class EmployeeDao {
         }
         return st;
     }
-    
+
     public int delete(long id) {
         con = ConnectionFactory.getConnection();
         try {
@@ -110,7 +110,7 @@ public class EmployeeDao {
         }
         return st;
     }
-    
+
     public Employee fetchById(long id) {
         Employee employee = new Employee();
         con = ConnectionFactory.getConnection();
@@ -144,7 +144,7 @@ public class EmployeeDao {
         }
         return employee;
     }
-    
+
     public Employee fetchByEmailId(String emailId) {
         Employee employee = new Employee();
         con = ConnectionFactory.getConnection();
@@ -178,7 +178,7 @@ public class EmployeeDao {
         }
         return employee;
     }
-    
+
     public Employee fetchByMobileNo(String mobileNo) {
         Employee employee = new Employee();
         con = ConnectionFactory.getConnection();
@@ -212,10 +212,10 @@ public class EmployeeDao {
         }
         return employee;
     }
-    
+
     public List<Employee> searchByName(String name) {
         List<Employee> employeeList = new ArrayList<Employee>();
-        
+
         con = ConnectionFactory.getConnection();
         try {
             String query = "select * from employee where fname like ? or lname like ?";
@@ -250,10 +250,10 @@ public class EmployeeDao {
         }
         return employeeList;
     }
-    
+
     public List<Employee> fetchByCity(String city) {
         List<Employee> employeeList = new ArrayList<Employee>();
-        
+
         con = ConnectionFactory.getConnection();
         try {
             String query = "select * from employee where  city=?";
@@ -287,10 +287,10 @@ public class EmployeeDao {
         }
         return employeeList;
     }
-    
+
     public List<Employee> fetchBySalaryRange(BigDecimal lowerSalary, BigDecimal higherSalary) {
         List<Employee> employeeList = new ArrayList<Employee>();
-        
+
         con = ConnectionFactory.getConnection();
         try {
             String query = "select * from employee where salary between ? and ?";
@@ -325,10 +325,10 @@ public class EmployeeDao {
         }
         return employeeList;
     }
-    
+
     public List<Employee> fetchByDob(Date dob) {
         List<Employee> employeeList = new ArrayList<Employee>();
-        
+
         con = ConnectionFactory.getConnection();
         try {
             String query = "select * from employee where dob=?";
@@ -362,10 +362,10 @@ public class EmployeeDao {
         }
         return employeeList;
     }
-    
+
     public List<Employee> fetchByRangeDoj(Date startDate, Date endDate) {
         List<Employee> employeeList = new ArrayList<Employee>();
-        
+
         con = ConnectionFactory.getConnection();
         try {
             String query = "select * from employee where doj between ? and ?";
@@ -400,13 +400,13 @@ public class EmployeeDao {
         }
         return employeeList;
     }
-    
+
     public List<Employee> fetchAll() {
         List<Employee> employeeList = new ArrayList<Employee>();
-        
+
         con = ConnectionFactory.getConnection();
         try {
-            String query = "select * from employee";
+            String query = "select * from employee order by id desc";
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
